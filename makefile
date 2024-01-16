@@ -1,9 +1,10 @@
 all :
-	g++ main.cpp -o main -std=c++20 -O3 
-git :
-	git init
-	git add README.md
-	git commit -m "first commit"
-	git branch -M main
-	git remote add origin https://github.com/ysf125/lineAlgorithm.git
-	git push -u origin main
+	g++ .\src\main.cpp lineAlgorithm.cpp -o main -std=c++20 -O3 
+	.\main.exe
+
+build :
+	g++ -c .\src\lineAlgorithm.cpp -o lineAlgorithm.o
+	ar cr lineAlgorithm.lib lineAlgorithm.o
+	del "lineAlgorithm.o"
+	g++ .\src\main.cpp lineAlgorithm.lib -o main -std=c++20 -O3 
+	.\main.exe
