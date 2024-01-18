@@ -40,7 +40,12 @@ S vector<xy> darwLine(xy point0, xy point1) {
 
 int main(int argc, char* argv[]) {
 
-    for (xy x : darwLine({ 3,4 }, { 0,0 })) {
+    S array<int, 4> input;
+    for (int i = 1; i < argc; i++) {
+        input[i - 1] = S atoi(argv[i]);
+    }
+
+    for (xy x : darwLine({ input[0], input[1] }, { input[2], input[3] })) {
         S cout << x.x << ',' << x.y << '\n';
     }
 
