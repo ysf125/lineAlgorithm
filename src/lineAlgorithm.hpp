@@ -1,5 +1,6 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
+#include <string>
 #include <array>
 #include <vector>
 #include <iostream>
@@ -15,4 +16,4 @@ int getWhichOctet(xy<int> point0, xy<int> point1);
 
 xy<int> movePointInGrid(xy<int> point, int dir, int D = 1);
 
-S vector<xy<int>> drawLineAlgorithm(xy<int> point0, xy<int> point1);
+S vector<xy<int>> angline(xy<int> point0, xy<int> point1);

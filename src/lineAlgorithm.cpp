@@ -17,7 +17,7 @@ xy<int> movePointInGrid(xy<int> point, int dir, int D) {
     return { point.x + (x[dir].x * D), point.y + (x[dir].y * D) };
 }
 
-S vector<xy<int>> drawLineAlgorithm(xy<int> point0, xy<int> point1) {
+S vector<xy<int>> angline(xy<int> point0, xy<int> point1) {
     S vector<xy<int>> points = { point0 };
     float angle = getAngle(point0, point1);
     int octetNum = floor(angle / 45);
