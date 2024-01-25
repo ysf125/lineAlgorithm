@@ -7,10 +7,6 @@ float getAngle(xy<int> point0, xy<int> point1) {
     return angle * (180 / M_PI);
 }
 
-int getWhichOctet(xy<int> point0, xy<int> point1) {
-    return floor(getAngle(point0, point1) / 45);
-}
-
 xy<int> movePointInGrid(xy<int> point, int dir, int D) {
     S array<xy<int>, 8> x = { 1, 0, 1, 1, 0, 1, -1, 1, -1, 0, -1, -1, 0, -1, 1, -1 };
     dir %= 8;
@@ -29,7 +25,7 @@ S vector<xy<int>> angline(xy<int> point0, xy<int> point1) {
         // exiting the loop after calculating the angles
         if (point0Angle == -1 || point1Angle == -1) break;
         // adding the next point
-        points.push_back(abs(angle - point0Angle) <= abs(angle - point1Angle) ? newPoint0 : newPoint1);
+        points.push_back(abs(angle - point0Angle) < abs(angle - point1Angle) ? newPoint0 : newPoint1);
     }
     points.push_back(point1);
     return points;
